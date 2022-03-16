@@ -19,10 +19,12 @@ class CreateProductsTable extends Migration
             $table->string('name');
             $table->double('price');
 
+            $table->biginteger('fk_id_category')->unsigned();
             $table->foreign('fk_id_category')
                 ->references('id_category')
                 ->on('categories');
 
+            $table->biginteger('fk_id_supplier')->unsigned();
             $table->foreign('fk_id_supplier')
                 ->references('id_supplier')
                 ->on('suppliers');
